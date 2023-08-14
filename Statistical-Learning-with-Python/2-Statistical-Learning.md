@@ -74,4 +74,17 @@
 
 ### Supervised Versus Unsupervised Learning
 
+- supervised learning involves both an input and an output
+- unsupervised learning focuses on understanding the relationships between various predictors
+- semi-supervised learning is a combination of the two that occurs when only a subset of responses for observations are available (e.g. when collecting responses is more costly than collecting observations)
+
+### Regression Versus Classification Problems
+
+- problems that involve quantitative responses are regression problems
+- problems with qualitative responses are classification problems
+    - most stat learning methods can be applied to a situation so long as their predictors are properly coded
+- some overlap may exist especially when data have binary classes
+
+## Assessing Model Accuracy
+
 - 
