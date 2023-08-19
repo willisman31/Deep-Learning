@@ -87,4 +87,14 @@
 
 ## Assessing Model Accuracy
 
-- 
+- there is no single greatest model, different models will perform better on different data sets
+
+### Measuring the Quality of Fit
+
+- each predicted response in a supervised model must be evaluated in terms of its accuracy relative to the actual response
+    - common mechanism used for this is *Mean Squared Error* (MSE)
+    - ![image](../.images/MSE-equation.xcf)
+    - when a model is good/accurate, the MSE will be small
+- the accuracy of the model relative to the training data is unimportant- if it was, then models would be optimized to fit data rather than their underlying patterns
+    - test data is used to assess accuracy
+
