@@ -97,4 +97,10 @@
     - when a model is good/accurate, the MSE will be small
 - the accuracy of the model relative to the training data is unimportant- if it was, then models would be optimized to fit data rather than their underlying patterns
     - test data is used to assess accuracy
+    - prediction accuracy against training data is not necessarily indicative of accuracy against test data
+- training MSE will decrease with greater model flexibility
+    - when a less flexible model would have yielded a lower test MSE, we see overfitting in action
 
+### The Bias-Variance Trade-Off
+
+- 
