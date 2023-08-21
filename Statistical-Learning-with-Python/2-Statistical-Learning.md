@@ -93,7 +93,7 @@
 
 - each predicted response in a supervised model must be evaluated in terms of its accuracy relative to the actual response
     - common mechanism used for this is *Mean Squared Error* (MSE)
-    - ![image](../.images/MSE-equation.xcf)
+    - ![image](../.images/mse-equation.png)
     - when a model is good/accurate, the MSE will be small
 - the accuracy of the model relative to the training data is unimportant- if it was, then models would be optimized to fit data rather than their underlying patterns
     - test data is used to assess accuracy
@@ -102,5 +102,24 @@
     - when a less flexible model would have yielded a lower test MSE, we see overfitting in action
 
 ### The Bias-Variance Trade-Off
+
+- expected test MSE can be decomposed into the sum of 3 values:
+    1. variance of f-hat
+    2. squared bias of f-hat
+    3. variance of $\epsilon$
+- ![image](../.images/expected-test-mse.png)
+    - the overall expected test MSE can be determined by averaging the result of this equation across all test values
+    - to minimize expected test error, lower *bias* **AND** lower *variance*
+- variance = how different f-hat would be if a different training set was used
+    - higher variance typically results from higher flexibility
+    - ideally, different training sets should yield the same f-hat
+- bias = error resulting from attempting make a prediction about a complicated phenomenon using an overly simplistic model
+    - more flexible models result in lower bias
+- when determining the flexibility of a model, we want to find a balance between bias and variance that lowers the test MSE
+    - the rates of change of bias and variance relative to model flexibility are not the same, which is what makes a single optimal balance possible
+- finding a balance to this trade-off is a central goal in statistical learning problems
+- explicit computation of test MSE isn't practically possible because the true value of *f* is virtually never known
+
+### The Classification Setting
 
 - 
