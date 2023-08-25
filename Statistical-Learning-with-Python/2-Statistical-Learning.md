@@ -122,4 +122,35 @@
 
 ### The Classification Setting
 
-- 
+- while regression models focus on average error size, classification problems use error rate
+- ![image](../.images/training-error-rate-equation.png)
+    - *I($y_{i}$ != $/hat{y}_{i}$)* is the indicator variable
+        - if true then equal to 1; i.e. if our prediction was wrong
+        - else equal to 0
+    - training error rate
+- ![image](../.images/test-error-rate-equation.png)
+    - test error rate
+    - good classifiers minimize this value
+
+#### The Bayes Classifier
+
+- somewhat intuitively, the test error rate (shown above) is minimized when we simply assign each observation to its most likely class given its predictor values
+- ![image](../.images/bayes-classifier-equation.png)
+    - probability that our prediction, *Y* is set to class *j* given observation *$x_{0}$*
+    - if this value is greater than any other alternative class, then this is the prediction
+        - ex. in a 3 class model, where class 1 has probability of .4, class 2 .3, and class 3 .3, then class 1 would be the predicted class
+- ![image](../.images/bayes-classifier-error-rate.png)
+    - bayes classifier error rate
+    - probability that our predicted class is incorrect
+    - only achievable by a perfectly optimal classifier; irreducible error
+
+#### K-Nearest Neighbors
+
+- in practice, the Bayes classfier cannot be computed
+    - conditional distribution of *Y* given *X* cannot be known in practice
+- K-nearest neighbors (KNN) classifier attempts to estimate conditional distribution of *Y* and assign classes based on the highest *estimated* probability (in contrast to Bayes which assigns classes based on highest actual probability)
+    - KNN classifier takes a positive integer K (which the modeler determines through intuition, guesswork, and/or iteration), collects a set of K points from its training data (this set is represented by *$N_{0}$*), and estimates the probability of point *$x{0}$* being a member of class *j* as a fraction of points in *$N_{0}$* that also in class *j* 
+- ![image](../.images/KNN-equation.png)
+- size of K greatly impacts model accuracy
+    - larger values have high variance, low bias, and vice versa
+    - more info on setting K to come; general suggestion: make K equal to square of the number of features
