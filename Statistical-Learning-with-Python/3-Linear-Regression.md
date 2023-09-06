@@ -43,5 +43,46 @@
         - residual standard error (RSE) = estimate of $\sigma$; ![image](../.images/rse-equation.png)
     - used to compute confidence intervals
         - confidence interval = range in which we can assign a certain probability that true value will be contained within
----
-left off at hypothesis tests on p76
+- hypothesis test = binary test between a null hypothesis and an alternative hypothesis
+    - ex. $H_{0}$: there is no relationship between *X* and *Y*; $H_{a}$: there is some relationship between *X* and *Y*
+        - in effect, with regard to linear regression, we're asking is $\beta_{1}$ equal to 0
+    - practically, *t-statistic* is calculated to determine the ratio of standard error to our estimated value's difference from our null hypothesis value
+        - i.e. t-stat = how many times our standard error is the difference between our estimate and our null hypothesis value
+        - using the t-stat, we can calculate the p-value
+            - p-value = correlatory value that suggests whether we should reject/accept our null hypothesis
+        - ![image](../.images/t-stat-equation.png)
+
+### Assessing the Accuracy of the Model
+
+- quality of fit for a linear regression model is determined using 2 related values:
+    - residual standard error (RSE)
+    - $R^{2}$ statistic
+
+#### Residual Standard Error
+
+- RSE = estimate of standard deviation of $\epsilon$; measure of *lack* of model fit- higher values = lower fit
+    - measured in units
+- ![image](../.images/rse-formula.png)
+    - ![image](../.images/rss-equation-3.png)
+
+#### $R^{2}$ Statistic
+
+- measured as a proportion between 0 and 1
+    - independent of scale
+- ![image](../.images/r-squared-statistic-equation.png)
+    - TSS = total sum of squares; amount of variability in *Y*; ![image](../.images/tss-equation.png)
+    - RSS = unexplained variability within linear regression model
+- $R^{2}$ = how much variability in *Y* that is explained by *X*
+    - higher values mean that more variation is explained by the regression
+- correlation = ![image](../.images/correlation-definition.png)
+    - squared correlation and $R^{2}$ statistic are identical in simple linear regression models
+    - correlation is not exactly useful in complex settings because it is limited to comparing a set of just two variables -> this is the importance of the $R^{2}$ statistic
+
+## Multiple Linear Regression
+
+- when trying to predict a value on the basis of multiple input features and using linear regression, a single unified model must be created to simultaneously utilize the effects of all input features
+- ![image](../.images/multiple-linear-regression-model.png)
+
+### Estimating the Regression Coefficients
+
+- 
