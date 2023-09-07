@@ -21,10 +21,13 @@
     - ![image](../.images/rss-equation-1.png)
     - ![image](../.images/rss-equation-2.png)
     - optimal models minimize the RSS
-        - ![image](../.images/least-squares-coefficients-estimates-equation.png)
-        - the above are the equations for estimating least squares coefficients
-        - $\bar{x}$ and $\bar{y}$ are the sample means
+---
+## THIS HERE IS IMPORTANT ##
 
+- ![image](../.images/least-squares-coefficients-estimates-equation.png)
+- the above are the equations for estimating least squares coefficients
+- $\bar{x}$ and $\bar{y}$ are the sample means
+---
 ### Assessing the Accuracy of the Coefficient Estimates
 
 - if *f* can be approximated by a linear function, it takes the form: ![image](../.images/linear-function-with-error.png)
@@ -85,4 +88,5 @@
 
 ### Estimating the Regression Coefficients
 
+- as was the case with simple linear regression, we're trying to estimate the coefficients for the above equation 
 - 
