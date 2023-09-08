@@ -89,4 +89,6 @@
 ### Estimating the Regression Coefficients
 
 - as was the case with simple linear regression, we're trying to estimate the coefficients for the above equation 
+- again, we attempt to estimate coefficients with the goal of minimizing the RSS sum
+    - ![image](../.images/rss-multiple-linear-regression.png)
 - 
