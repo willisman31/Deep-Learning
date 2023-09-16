@@ -19,10 +19,10 @@
 
 #### Prediction
 
-- $/hat{Y}$ = $/hat{f}$(*X*)
-    - $/hat{Y}$ is the predicted response
-    - $/hat{f}$ is the predicted function
-    - $/hat{Y}$'s accuracy is dependent upon 2 variables:
+- $\hat{Y}$ = $\hat{f}$(*X*)
+    - $\hat{Y}$ is the predicted response
+    - $\hat{f}$ is the predicted function
+    - $\hat{Y}$'s accuracy is dependent upon 2 variables:
         1. reducible error - error that is introduced by having an imperfect estimate of *f*
         2. irreducible error - error that is introduced by $\epsilon$; this error may arise from missing predictors or unquantifiable variations
             - the upper bound on prediction accuracy
@@ -30,7 +30,7 @@
 
 #### Inference
 
-- if our goal is to determine the relationship between *X* and *Y*, then *f* cannot be treated as a black box- its form must be known because we are not interested in $/hat{Y}$
+- if our goal is to determine the relationship between *X* and *Y*, then *f* cannot be treated as a black box- its form must be known because we are not interested in $\hat{Y}$
 - the following questions may be asked in this case:
     - which predictors effect *Y*?
     - how do relevant predictors effect *Y*?
@@ -41,15 +41,15 @@
 ### How Do We Estimate *f*?
 
 - all models require a set of *n* inputs (training data)
-- *x_{ij}* = value of *j*th predictor of *i*th observation
-- *y_{i}* = value of *i*th prediction
-- goal is to find $/hat{*f*}$ that most accurately predicts *Y*; methods for this can broadly be defined as parametric or non-parametric
+- *$x_{ij}$* = value of *j*th predictor of *i*th observation
+- *$y_{i}$* = value of *i*th prediction
+- goal is to find $\hat{f}$ that most accurately predicts *Y*; methods for this can broadly be defined as parametric or non-parametric
 
 #### Parametric Methods
 
 - 2-step model-based approach:
     1. assume shape/form of the relationship
-        - ex. relationship is linear, which simply means that coefficients applied to predictors must be manipulated to find $/hat{f}$
+        - ex. relationship is linear, which simply means that coefficients applied to predictors must be manipulated to find $\hat{f}$
     2. follow procedure to fit/train the model to reflect the assumed relationship
         - least squares is the most common method for a linear model, but many others exist
 - reduces the effort of modeling down to selecting the right coefficients
@@ -124,7 +124,7 @@
 
 - while regression models focus on average error size, classification problems use error rate
 - ![image](../.images/training-error-rate-equation.png)
-    - *I($y_{i}$ != $/hat{y}_{i}$)* is the indicator variable
+    - *I($y_{i}$ != $\hat{y}_{i}$)* is the indicator variable
         - if true then equal to 1; i.e. if our prediction was wrong
         - else equal to 0
     - training error rate
@@ -149,7 +149,7 @@
 - in practice, the Bayes classfier cannot be computed
     - conditional distribution of *Y* given *X* cannot be known in practice
 - K-nearest neighbors (KNN) classifier attempts to estimate conditional distribution of *Y* and assign classes based on the highest *estimated* probability (in contrast to Bayes which assigns classes based on highest actual probability)
-    - KNN classifier takes a positive integer K (which the modeler determines through intuition, guesswork, and/or iteration), collects a set of K points from its training data (this set is represented by *$N_{0}$*), and estimates the probability of point *$x{0}$* being a member of class *j* as a fraction of points in *$N_{0}$* that also in class *j* 
+    - KNN classifier takes a positive integer K (which the modeler determines through intuition, guesswork, and/or iteration), collects a set of K points from its training data (this set is represented by *$N_{0}$*), and estimates the probability of point *$x_{0}$* being a member of class *j* as a fraction of points in *$N_{0}$* that also in class *j* 
 - ![image](../.images/KNN-equation.png)
 - size of K greatly impacts model accuracy
     - larger values have high variance, low bias, and vice versa
