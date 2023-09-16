@@ -91,4 +91,31 @@
 - as was the case with simple linear regression, we're trying to estimate the coefficients for the above equation 
 - again, we attempt to estimate coefficients with the goal of minimizing the RSS sum
     - ![image](../.images/rss-multiple-linear-regression.png)
+    - coefficient estimates best lend themselves to matrix representations
+        - graphical representations become nearly impossible once more than two predictors are used
+- the introduction of additional *relevant* factors can challenge some assertions based on simple linear regression as correlatory vs causative predictors can often be separated
+
+### Some Important Questions
+
+#### One: Is there a relationship between the response and predictors?
+
+- In a simple linear regression model we simply must ask if our single slope value, $\beta_{1}$, is equal to zero; extending that to apply to a multiple regression model, we ask if $\beta_{1}$ = $\beta_{2}$ = ... = $\beta_{p}$ = 0
+    - this becomes our $H_{0}$ in hypothesis testing- that there is no relationship between predictors and response, that is
+    - $H_{a}$ = at least one coefficient is non-zero
+    - these hypotheses are tested by computing the F-statistic
+        - ![image](../.images/F-statistic-equation.png)
+            - ![image](../.images/tss-equation.png)
+            - ![image](../.images/rss-equation-3.png)
+        - when $H_{0}$ is true, then the F-statistic will approach 1, the numerator and denominator will both approach standard deviation squared
+            - if the RSS (our measure of error) is less when our coefficients are *not* all set to 0, then we know that there is some relationship between response and predictors
+        - the further from 1 our F-stat is, the more confident we can be in the presence of some relationship
+            - the larger our number of observations (*n*), the lower our F-stat must be in order to prove that $H_{0}$ is false
+- one could theoretically perform a t-stat test on each predictor separately to determine which actually influence the result
+    - this flawed for the following reasons:
+        - when a large number of predictors is present, each one may have only a very small effect on the response, but their total impact may be very important
+        - some predictors may have small p-values by chance- this is even more likely in a model with many predictors
+    - when p > n, we cannot use this t-stat or F-stat
+
+#### Two: Deciding on Important Variables
+
 - 
