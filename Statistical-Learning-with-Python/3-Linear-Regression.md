@@ -118,4 +118,47 @@
 
 #### Two: Deciding on Important Variables
 
+- variable selection = the process of determining which predictors are relevant to the response
+    - as discussed above, simply evaluating individual p-values for each var will likely lead to incorrect conclusions if the number of predictors is sufficiently large
+    - the process of variable selection is discussed at length in [Chapter 6](./6-Linear-Model-Selection-and-Regularization.md)
+- our ideal method of selection would be to test each possible combination of predictors in the model
+    - this is obviously impractical once our number of predictors is even modestly large as the size grows at a rate of $2^{n}$
+    - 3 classical alternatives exist:
+        1. forward selection: we begin with the null model (from $H_{0}$- intercept only), we then try *p* simple linear regression models and add to our null model the variable whose model results in the lowest RSS.  We iterate on this model and recalculate a new set of *p* multiple linear regression models that contain an intercept, our lowest-RSS model param and one of the remaining params.  We continue this until a pre-determined stop condition is reached.
+        2. backward selection: We start with a model containing all *p* predictors, and remove the predictor with the largest p-value.  We iterate and continue until a pre-determined stop condition is reached
+            - cannot be used if *p* > *n*
+        3. mixed selection: we start with a model with no predictors and add only those that provide best fit, if a predictors has too high a p-value, then it is not added.  Iterate through all possible predictors; the end.
+- there exist various methods for determining model quality; some are listed here, but will not be explained until Chapter 6
+    - Mallow's $C_{p}$
+    - Akaike information criterion (AIC)
+    - Bayesian infromation criterion (BIC)
+    - adjusted $R^{2}$
+
+#### Three: Model Fit
+
+- RSE and $R^{2}$ are two of the most common measures of model fit
+    - $R^{2}$ = Cor($Y$, $\hat{Y}$)$^2$
+        - square of correlation between response and fitted linear model
+- there is a small increase in $R^{2}$ whenever additional predictors are added; this occurs almost completely independently of any relationship that they may or may not have with the response
+    - the RSE decreases as well since it is partly based on the number of parameters included
+        - if the increase to RSS is small, then the increase in parameters will naturally decrease the RSE
+        - ![image](../.images/rse-formula-multiple-linear-regression.png)
+- visual representations often help identify problems with models that simple numerical analysis has missed
+
+#### Four: Predictions
+
+- 3 types of uncertainty exist for multiple linear regression models:
+    1. coefficient estimates are only estimates- they have irreducible error and practically will virtually always have reducible error left in them as well
+    2. model bias arising from our selection of a linear model as the basis of our prediction.
+    3. irreducible error is always present even when we know f(X)
+- confidence intervals aim to quantify the uncertainty
+
+## Other Considerations in the Regression Model
+
+### Qualitative Predictors
+
+- so far only considered quantitative predictors have been considered in example models, but what if...
+
+#### Predictors with Only Two Levels
+
 - 
